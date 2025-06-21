@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neena Joseph | Travel Card</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .card {
+      max-width: 420px;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .circle-header {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #f5a623;
+      margin: 0 auto 1rem;
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin: 2px 0;
+      color: #555;
+    }
+
+    .icon-links {
+      margin: 1.2rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .icon-links a {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .call    { background: #00b894; }
+    .email   { background: #f39c12; }
+    .whatsapp{ background: #25D366; }
+    .web     { background: #2d3436; }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 1rem 0;
+    }
+
+    .action-buttons a {
+      flex: 1;
+      text-decoration: none;
+      background: #444;
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .contact-section {
+      text-align: left;
+      margin-top: 1.5rem;
+    }
+
+    .contact-section h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .contact-item i {
+      margin-top: 3px;
+      color: #666;
+    }
+
+    .contact-details span {
+      font-weight: 600;
+      display: block;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #aaa;
+      margin-top: 1rem;
+    }
+    .copy-btn {
+      padding: 10px 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .copied-msg {
+      color: green;
+      margin-top: 8px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+     <p class="copied-msg" id="copiedMsg">Link copied to clipboard!</p>
+    <div class="circle-header"></div>
+    
+    <h2>NEENA JOSEPH</h2>
+    <p>DIRECTOR</p>
+    <p>SANA DESTINO</p>
+    <p>YOUR TRAVEL PARTNER</p>
+
+    <div class="icon-links">
+      <a style="text-decoration: none;"href="tel:+971 52 598 8787" class="call"><i class="fas fa-phone-square"></i></a>
+      <a style="text-decoration: none;"href="mailto:neena@sanadestino.com" class="email"><i class="fas fa-envelope"></i></a>
+      <a style="text-decoration: none;"href="https://wa.me/971525988787" class="whatsapp"><i class="fab fa-whatsapp-square"></i></a>
+      <a style="text-decoration: none;"href="https://www.sanadestino.com" class="web"><i class="fas fa-globe-americas"></i></a>
+    </div>
+
+    <div class="action-buttons">
+      <a href="contact.vcf" download><i class="fas fa-address-card"></i> Save Contact</a>
+      <a  class="copy-btn" onclick="copyToClipboard()"><i class="fas fa-share-alt"></i> Share</a>
+    </div>
+
+    <div class="contact-section">
+      <h3><i class="fas fa-user"></i> Contact Me</h3>
+
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <div class="contact-details">
+          <span>Primary</span> +971 52 598 8787
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <div class="contact-details">
+          <span>Secondary</span> (04) 360 9797
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <div class="contact-details">
+          <span>Whatsapp</span> ++971 52 598 8787
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <div class="contact-details">
+          <span>Email</span> neena@sanadestino.com
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-globe"></i>
+        <div class="contact-details">
+          <span>Website</span> www.sanadestino.com
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="contact-details">
+          <span>Address</span> S.R Square, 1st floor, Chevayoor, Calicut, Kerala, India, 673017
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">auxxbay</div>
+  </div>
+ <script>
+    function copyToClipboard() {
+      const textToCopy = "https://sanadestino.com"; // <-- Your link here
+      navigator.clipboard.writeText(textToCopy).then(function() {
+        document.getElementById("copiedMsg").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("copiedMsg").style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
