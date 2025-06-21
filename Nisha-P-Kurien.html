@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nisha P. Kurien | Business Card</title>
+  <title>Neena Joseph | Business Card</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     * {
@@ -68,18 +68,12 @@
       justify-content: center;
       color: white;
       font-size: 1.2rem;
-      transition: background 0.3s ease;
     }
 
-    .call     { background: #0e8f6c; }       /* Better green for phone */
-    .email    { background: #f39c12; }       /* Bright orange for mail */
-    .whatsapp { background: #128C7E; }       /* WhatsApp brand green */
-    .web      { background: #343a40; }       /* Neutral dark for website */
-
-    .icon-links a:hover {
-      opacity: 0.85;
-      transform: scale(1.05);
-    }
+    .call    { background: #00b894; }
+    .email   { background: #f39c12; }
+    .whatsapp{ background: #25D366; }
+    .web     { background: #2d3436; }
 
     .action-buttons {
       display: flex;
@@ -100,10 +94,6 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-    }
-
-    .action-buttons a:hover {
-      background: #222;
     }
 
     .contact-section {
@@ -140,58 +130,76 @@
       color: #aaa;
       margin-top: 1rem;
     }
+    .copy-btn {
+      padding: 10px 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .copied-msg {
+      color: green;
+      margin-top: 8px;
+      display: none;
+    }
   </style>
 </head>
 <body>
 
   <div class="card">
+     <p class="copied-msg" id="copiedMsg">Link copied to clipboard!</p>
     <div class="circle-header"></div>
-    <h2>NISHA P. KURIEN</h2>
+    
+    <h2>NEENA JOSEPH</h2>
     <p>DIRECTOR</p>
-    <p>SANA DESTINO TOURS & TRAVEL LLC</p>
-    <p>Business Bay, Dubai, UAE</p>
+    <p>SANA DESTINO</p>
+    <p>YOUR TRAVEL PARTNER</p>
 
     <div class="icon-links">
-      <a href="tel:+971525988787" class="call" title="Call">
-        <i class="fa-solid fa-phone-volume"></i>
-      </a>
-      <a href="mailto:nisha@sanadestino.com" class="email" title="Email">
-        <i class="fa-solid fa-envelope-open-text"></i>
-      </a>
-      <a href="https://wa.me/971525988787" class="whatsapp" title="WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-      <a href="https://www.sanadestino.com" class="web" title="Website">
-        <i class="fa-solid fa-globe"></i>
-      </a>
+      <a style="text-decoration: none;"href="tel:+971 52 598 8787" class="call"><i class="fas fa-phone-square"></i></a>
+      <a style="text-decoration: none;"href="mailto:neena@sanadestino.com" class="email"><i class="fas fa-envelope"></i></a>
+      <a style="text-decoration: none;"href="https://wa.me/971525988787" class="whatsapp"><i class="fab fa-whatsapp-square"></i></a>
+      <a style="text-decoration: none;"href="https://www.sanadestino.com" class="web"><i class="fas fa-globe-americas"></i></a>
     </div>
 
     <div class="action-buttons">
-      <a href="nisha-contact.vcf" download><i class="fas fa-address-card"></i> Save Contact</a>
-      <a href="#"><i class="fas fa-share-alt"></i> Share</a>
+      <a href="contact.vcf" download><i class="fas fa-address-card"></i> Save Contact</a>
+      <a  class="copy-btn" onclick="copyToClipboard()"><i class="fas fa-share-alt"></i> Share</a>
     </div>
 
     <div class="contact-section">
       <h3><i class="fas fa-user"></i> Contact Me</h3>
 
       <div class="contact-item">
-        <i class="fas fa-phone-alt"></i>
+        <i class="fas fa-phone"></i>
         <div class="contact-details">
-          <span>Landline</span> (04) 360 9797
+          <span>Primary</span> +971 52 598 8787
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <div class="contact-details">
+          <span>Secondary</span> (04) 360 9797
         </div>
       </div>
 
       <div class="contact-item">
-        <i class="fas fa-mobile-alt"></i>
+        <i class="fab fa-whatsapp"></i>
         <div class="contact-details">
-          <span>Mobile</span> +971 52 598 8787
+          <span>Whatsapp</span> +971 52 598 8787
         </div>
       </div>
 
       <div class="contact-item">
         <i class="fas fa-envelope"></i>
         <div class="contact-details">
-          <span>Email</span> nisha@sanadestino.com
+          <span>Email</span> neena@sanadestino.com
         </div>
       </div>
 
@@ -205,15 +213,25 @@
       <div class="contact-item">
         <i class="fas fa-map-marker-alt"></i>
         <div class="contact-details">
-          <span>Address</span> Office 1712, Park Lane Tower,<br>
-          Business Bay, Dubai, UAE.
+          <span>Address</span> Sana Destino Tours & Travel LLC 
+Office 1712, Park Lane Tower, Business Bay, Dubai, UAE
+
         </div>
       </div>
     </div>
 
-    <div class="footer">gofindy.com</div>
+    <div class="footer">auxxbay</div>
   </div>
-
+ <script>
+    function copyToClipboard() {
+      const textToCopy = "https://sanadestino.com"; // <-- Your link here
+      navigator.clipboard.writeText(textToCopy).then(function() {
+        document.getElementById("copiedMsg").style.display = "block";
+        setTimeout(() => {
+          document.getElementById("copiedMsg").style.display = "none";
+        }, 2000);
+      });
+    }
+  </script>
 </body>
 </html>
-
